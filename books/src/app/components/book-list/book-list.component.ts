@@ -5,10 +5,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from '../../servies/cart/services';
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  templateUrl: './book-list.component.html',
+  styleUrls: ['./book-list.component.css'],
 })
-export class HomeComponent implements OnInit {
+export class BookListComponent implements OnInit {
   books: Book[] = [];
   constructor(
     private bookService: BookService,
@@ -24,11 +24,11 @@ export class HomeComponent implements OnInit {
           params['searchTerm']
         );
       else {
-         this.books = this.bookService.getAll();
+        this.books = this.bookService.getAll();
       }
     });
   }
-  addToCart(book:Book) {
+  addToCart(book: Book) {
     this.cartService.addToCart(book);
     this.router.navigateByUrl('/cart-page');
   }

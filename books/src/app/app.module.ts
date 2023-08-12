@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './components/home/home.component';
+import { BookListComponent } from './components/book-list/book-list.component';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { BookPageComponent } from './components/book-page/book-page.component';
@@ -16,13 +16,13 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent,
+    BookListComponent,
     SearchComponent,
     BookPageComponent,
     CartPageComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule,HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
