@@ -1,0 +1,6 @@
+<app-search></app-search>
+<ul>
+  <app-book-details *ngFor="let book of books"
+        [book]="book" (addToCart)="addToCart(book)"></app-book-details>
+
+</ul>

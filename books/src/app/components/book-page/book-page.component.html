@@ -1,0 +1,29 @@
+
+<div *ngIf="book" class="container">
+    <img class="img" [src]="book.thumbnailUrl" [alt]="book.title" />
+    <div class="details">
+        <div class="header">
+            <span class="name">
+                {{book.title}}
+            </span>
+        </div>
+        <div class="author">
+          <strong>Author: </strong>{{book.author}}
+        </div>
+        <div class="description">
+          <strong>Description: </strong>{{book.description}}
+        </div>
+        <div class="time">
+            <span>
+                publish at <strong>{{book.publicationYear}}</strong>
+            </span>
+        </div>
+
+        <div class="price">
+            <span>{{book.price|currency}}</span>
+        </div>
+
+        <button (click)="addToCart()">Add To Cart</button>
+    </div>
+
+</div>
