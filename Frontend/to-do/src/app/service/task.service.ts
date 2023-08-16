@@ -11,10 +11,12 @@ export class TaskService {
     this.serviceURL = 'http://localhost:5001/api';
   }
 
+  // fetch all tasks
   getAllTask(): Observable<Task[]> {
     return this.http.get<Task[]>(this.serviceURL + '/tasks');
   }
 
+  // update complete status in task
   completeTask(task: Task): Observable<Task> {
     return this.http.put<Task>(
       this.serviceURL + '/completeTask/' + task.id,

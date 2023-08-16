@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit {
     this.taskArr = [];
     this.getAllTask();
   }
+  // fetch all tasks
   getAllTask() {
     this.taskService.getAllTask().subscribe({
       next: (res) => {
@@ -27,12 +28,14 @@ export class DashboardComponent implements OnInit {
         this.taskArr = res;
       },
       error: (err) => {
+        // put error message
         this.error = true;
         this.errorMessage = 'Unable to get list of tasks';
       },
     });
   }
 
+  // make task complete or not
   completeTask(etask: Task) {
     etask.isCompleted = !etask.isCompleted;
     console.log(etask);
@@ -42,6 +45,7 @@ export class DashboardComponent implements OnInit {
         this.ngOnInit();
       },
       error: (err) => {
+        // put error message
         this.error = true;
         this.errorMessage = 'Failed to update task';
         etask.isCompleted = !etask.isCompleted;
