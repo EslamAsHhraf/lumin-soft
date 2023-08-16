@@ -14,18 +14,18 @@ export class CartPageComponent implements OnInit {
     this.setCart();
   }
   ngOnInit(): void {}
-
+  // remove book from cart
   removeFromCart(cartItem: CartItem) {
     this.cartService.removeFromCart(cartItem.book.id);
     this.setCart();
   }
-
+  // change quantity of books
   changeQuantity(cartItem: CartItem, quantityInString: string) {
     const quantity = parseInt(quantityInString);
     this.cartService.changeQuantity(cartItem.book.id, quantity);
     this.setCart();
   }
-
+  // get all books in cart
   setCart() {
     this.cart = this.cartService.getCart();
   }

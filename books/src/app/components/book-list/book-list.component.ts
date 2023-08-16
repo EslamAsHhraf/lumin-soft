@@ -19,15 +19,18 @@ export class BookListComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      if (params['searchTerm'])
+      if (params['searchTerm']) // if search get result according it
         this.books = this.bookService.getAllBooksBySearchTerm(
           params['searchTerm']
         );
       else {
+        // get all books
         this.books = this.bookService.getAll();
       }
     });
   }
+
+  // add book to the cart
   addToCart(book: Book) {
     this.cartService.addToCart(book);
     this.router.navigateByUrl('/cart-page');

@@ -12,7 +12,8 @@ export class BookDetailsComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() { }
+  // add book to the cart
   emitAddToCart(event: Event) {
     event.preventDefault();
     this.addToCart.emit(this.book);

@@ -17,7 +17,7 @@ export class SearchComponent implements OnInit {
         this.searchTerm = params['searchTerm'];
     })
   }
-
+  // route according to search input
   search():void{
     if(this.searchTerm)
     this.router.navigateByUrl('/search/' + this.searchTerm);

@@ -17,13 +17,15 @@ export class BookPageComponent implements OnInit {
     private cartService: CartService,
     private router: Router
   ) {
+    // get book by id
     activatedRoute.params.subscribe((params) => {
       if (params['id']) this.book = bookService.getBookById(params['id']);
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
+  // add book to the cart
   addToCart() {
     this.cartService.addToCart(this.book);
     this.router.navigateByUrl('/cart-page');
