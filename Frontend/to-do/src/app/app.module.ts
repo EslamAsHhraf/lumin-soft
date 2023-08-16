@@ -5,10 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './conponent/dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
-import { EditTaskComponent } from './conponent/editTask/editTask.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent,EditTaskComponent],
+  declarations: [AppComponent, DashboardComponent],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
