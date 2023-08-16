@@ -42,7 +42,6 @@ export class DashboardComponent implements OnInit {
     this.taskService.completeTask(etask).subscribe({
       next: (res) => {
         this.error = false;
-        this.ngOnInit();
       },
       error: (err) => {
         // put error message
